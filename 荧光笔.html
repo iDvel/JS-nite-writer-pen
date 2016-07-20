@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        body {
+            width: 100%;
+            height: 800px;
+            border: 1px solid blue;
+            background: #282828;
+        }
+    </style>
+    <script type="text/javascript">
+        var idx = 1;
+
+        function mouseover(e) {
+            var img = document.createElement("img");
+            img.src = "images/" + idx + ".png";
+            img.width = 30;
+
+            img.style.position = "absolute";
+            img.style.top = (e.clientY - img.width / 2) + "px";
+            img.style.left = (e.clientX - img.width / 2) + "px";
+
+            document.body.appendChild(img);
+        }
+
+        function mousedown() {
+            if (++idx > 6)
+                idx = 1;
+        }
+    </script>
+</head>
+
+<body onmouseover="mouseover(event)" onmousedown="mousedown()">
+</body>
+
+</html>
